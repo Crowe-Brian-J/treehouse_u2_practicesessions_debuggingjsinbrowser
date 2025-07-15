@@ -14,13 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
   div.appendChild(filterLabel)
   div.appendChild(filterCheckBox)
   mainDiv.insertBefore(div, ul)
+
   filterCheckBox.addEventListener('change', (e) => {
     const isChecked = e.target.checked
     const lis = ul.children
     if (isChecked) {
       for (let i = 0; i < lis.length; i += 1) {
         let li = lis[i]
-        if ((li.className = 'responded')) {
+        if (li.className === 'responded') {
           li.style.display = ''
         } else {
           li.style.display = 'none'
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const li = document.createElement('li')
-    appendToLI('span', 'textContent', 'text')
+    appendToLI('span', 'textContent', text)
     appendToLI('label', 'textContent', 'Confirmed').appendChild(
       createElement('input', 'type', 'checkbox')
     )
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ul.addEventListener('change', (e) => {
     const checkbox = e.target
-    const listItem = checkbox.parentNode
+    const listItem = checkbox.parentNode.parentNode
     const checked = checkbox.checked
 
     if (checked) {
