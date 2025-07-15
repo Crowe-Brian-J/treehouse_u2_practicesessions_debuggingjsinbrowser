@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const ul = li.parentNode
       const action = button.textContent
       const nameActions = {
-        remove: (li) => {
+        remove: () => {
           ul.removeChild(li)
         },
         edit: () => {
